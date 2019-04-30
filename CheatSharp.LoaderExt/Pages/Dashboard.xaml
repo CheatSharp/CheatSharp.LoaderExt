@@ -1,0 +1,97 @@
+﻿<Page x:Class="CheatSharp.LoaderExt.Pages.Dashboard"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CheatSharp.LoaderExt.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="539" d:DesignWidth="954"
+      Title="Dashboard">
+
+    <Grid>
+        <Label Content="Cheat# Dashboard" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="SemiBold"/>
+        <!--Status icons-->
+        <Grid Margin="10,60,0,0" Height="120" VerticalAlignment="Top">
+            <Grid Height="40" VerticalAlignment="Top" Width="310" HorizontalAlignment="Left">
+                <Grid Width="26" Height="26" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                    <Ellipse x:Name="ServerStatusColor" Fill="Red" HorizontalAlignment="Center" Height="15" Stroke="Black" VerticalAlignment="Center" Width="15"/>
+                </Grid>
+                <Label x:Name="ServerStatusLabel" Content="Server Status - Down" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="26,7,0,7"/>
+            </Grid>
+            <Grid Height="40" VerticalAlignment="Top" Width="310" HorizontalAlignment="Left" Margin="0,40,0,0">
+                <Grid Width="26" Height="26" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                    <Ellipse x:Name="DetectionStatusColor" Fill="Green" HorizontalAlignment="Center" Height="15" Stroke="Black" VerticalAlignment="Center" Width="15"/>
+                </Grid>
+                <Label x:Name="DetectionStatusLabel" Content="Still Undetected" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="26,7,0,7"/>
+            </Grid>
+            <Grid Height="40" VerticalAlignment="Top" Width="310" HorizontalAlignment="Left" Margin="0,80,0,0">
+                <Grid Width="26" Height="26" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                    <Ellipse Fill="Green" HorizontalAlignment="Center" Height="15" Stroke="Black" VerticalAlignment="Center" Width="15"/>
+                </Grid>
+                <Label Content="Tested working - Patch 9.8" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="26,7,0,7"/>
+            </Grid>
+            <Grid Height="40" VerticalAlignment="Top" Width="310" HorizontalAlignment="Left" Margin="310,0,0,0">
+                <Grid Width="26" Height="26" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                    <Ellipse x:Name="LicenseStatusColor" Fill="Green" HorizontalAlignment="Center" Height="15" Stroke="Black" VerticalAlignment="Center" Width="15"/>
+                </Grid>
+                <Label x:Name="LicenseStatusLabel" Content="License Active - ∞ days until next payment" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="26,7,0,7"/>
+            </Grid>
+            <Grid Height="40" VerticalAlignment="Top" Width="310" HorizontalAlignment="Left" Margin="310,40,0,0">
+                <Grid Width="26" Height="26" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                    <Ellipse x:Name="CheatSharpUpdateStatusColor" Fill="Yellow" HorizontalAlignment="Center" Height="15" Stroke="Black" VerticalAlignment="Center" Width="15"/>
+                </Grid>
+                <Label x:Name="CheatSharpUpdateStatusLabel" Content="Cheat# is out of date" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="26,7,0,7"/>
+            </Grid>
+            <Grid Height="40" VerticalAlignment="Top" Width="310" HorizontalAlignment="Left" Margin="310,80,0,0">
+                <Grid Width="26" Height="26" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                    <Ellipse x:Name="CheatSharpLauncherUpdateStatusColor" Fill="Yellow" HorizontalAlignment="Center" Height="15" Stroke="Black" VerticalAlignment="Center" Width="15"/>
+                </Grid>
+                <Label x:Name="CheatSharpLauncherUpdateStatusLabel" Content="Cheat# launcher out of date" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="26,7,0,7"/>
+            </Grid>
+            <Grid Height="40" VerticalAlignment="Top" Width="310" HorizontalAlignment="Left" Margin="620,0,0,0">
+                <Grid Width="26" Height="26" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                    <Ellipse Fill="Green" HorizontalAlignment="Center" Height="15" Stroke="Black" VerticalAlignment="Center" Width="15"/>
+                </Grid>
+                <Label Content="Your system exceeds minimum requirements" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="26,7,0,7"/>
+            </Grid>
+            <Grid Height="40" VerticalAlignment="Top" Width="310" HorizontalAlignment="Left" Margin="620,40,0,0">
+                <Grid Width="26" Height="26" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                    <Ellipse Fill="Yellow" HorizontalAlignment="Center" Height="15" Stroke="Black" VerticalAlignment="Center" Width="15"/>
+                </Grid>
+                <Label Content="You are using injection (easier to detect)" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="26,7,0,7"/>
+            </Grid>
+            <Grid Height="40" VerticalAlignment="Top" Width="310" HorizontalAlignment="Left" Margin="620,80,0,0">
+                <Grid Width="26" Height="26" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                    <Ellipse Fill="Red" HorizontalAlignment="Center" Height="15" Stroke="Black" VerticalAlignment="Center" Width="15"/>
+                </Grid>
+                <Label Content="Not currently injected" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="26,7,0,7"/>
+            </Grid>
+        </Grid>
+        <!--Other stuff-->
+        <Grid Margin="10,185,0,10" VerticalAlignment="Bottom">
+            <Grid Margin="0,0,472,0">
+                <Label Content="Scripting Information" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="SemiBold"/>
+                <Label Content="14 - Plugins installed" HorizontalAlignment="Left" Margin="10,49,0,0" VerticalAlignment="Top" FontSize="14"/>
+                <Label Content="5 - Plugins are out of date" HorizontalAlignment="Left" Margin="10,78,0,0" VerticalAlignment="Top" FontSize="14"/>
+                <Label Content="2 - New Cheat# Official Scripts" HorizontalAlignment="Left" Margin="10,107,0,0" VerticalAlignment="Top" FontSize="14"/>
+                <Label Content="1 - Plugin is using obsolete functions (will not work in the next updates)" HorizontalAlignment="Left" Margin="10,136,0,0" VerticalAlignment="Top" FontSize="14"/>
+                <Label Content="3 - Plugins are disabled from obsolete functions" HorizontalAlignment="Left" Margin="10,165,0,0" VerticalAlignment="Top" FontSize="14"/>
+                <Label Content="1 - Unsigned plugin installed" HorizontalAlignment="Left" Margin="10,194,0,0" VerticalAlignment="Top" FontSize="14"/>
+                <Label Content="3 - Plugins significantly decrease performance" HorizontalAlignment="Left" Margin="10,223,0,0" VerticalAlignment="Top" FontSize="14"/>
+                <Label Content="HWID Locked to this system for 1 hour and 13 minutes" HorizontalAlignment="Left" Margin="10,315,0,0" VerticalAlignment="Top" FontSize="14" Width="452"/>
+            </Grid>
+            <Grid Margin="472,0,0,0">
+                <Label Content="Launch Install and Report" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="SemiBold"/>
+
+                <Button Content="Launch League of Legends (No Sandbox)" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="452" Margin="10,49,0,0"/>
+                <Button Content="Launch League of Legends (With Sandbox)" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="452" Margin="10,81,0,0"/>
+                <Button Content="Launch IcyWind" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="452" Margin="10,113,0,0"/>
+                <Button Content="Install Cheat# Update" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="452" Margin="10,145,0,0"/>
+                <Button Content="Install Cheat# External Launcher Update" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="452" Margin="10,177,0,0"/>
+                <Button Content="Install Any Plugin Updates" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="452" Margin="10,209,0,0"/>
+                <Button Content="Report a bug" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="452" Margin="10,285,0,0"/>
+                <Button Content="Report a ban" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="452" Margin="10,317,0,0"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>

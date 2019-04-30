@@ -1,0 +1,37 @@
+﻿<Page x:Class="CheatSharp.LoaderExt.Pages.About"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CheatSharp.LoaderExt.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="544" d:DesignWidth="954"
+      Title="About">
+
+    <Grid>
+        <Label Content="About" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="SemiBold"/>
+        <RichTextBox HorizontalAlignment="Stretch" Margin="10,57,10,10" VerticalAlignment="Stretch">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text="Cheat# returns the golden days of League of Legends, when you would face scripters"/>
+                    <Run Text="Let's bring scripting back. Riot has no excuse to block out Linux users because it enhances security. This will show them."/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="Lib used:"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="ControlzEx"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="MahApps.Metro, MahApps.Metro.IconPacks, MahApps.Metro.Resources"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="Microsoft.Xaml.Behaviors.Wpf"/>
+                </Paragraph>
+                <Paragraph>
+                    <Run Text="These libraries are all released under the MIT License. they will be here soon (tm)"/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+    </Grid>
+</Page>

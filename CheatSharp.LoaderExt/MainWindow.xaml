@@ -1,0 +1,60 @@
+﻿<mah:MetroWindow x:Class="CheatSharp.LoaderExt.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:local="clr-namespace:CheatSharp.LoaderExt"
+        mc:Ignorable="d"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        Title="Reggy Music Player" ShowTitleBar="False" TitleBarHeight="32" TitleForeground="#FF1585B5" Height="600" Width="1000"
+        TitleCharacterCasing="Normal" ResizeMode="CanMinimize">
+    <Grid>
+        <Grid x:Name="TitleBar" MouseDown="TitleBar_MouseDown" Background="#FF2D2D30" VerticalAlignment="Top" HorizontalAlignment="Stretch" Height="32">
+            <!--Heading Bar-->
+            <Grid x:Name="Menu" Width="40" HorizontalAlignment="Left" ToolTip="Expand or collapse menu sidebar">
+                <iconPacks:PackIconMaterial Kind="Menu" VerticalAlignment="Center" HorizontalAlignment="Center" Height="20" Width="20" Margin="10,6" />
+                <Button Style="{StaticResource MetroFlatButton}" BorderBrush="{x:Null}" Background="{x:Null}" Click="Menu_Click"/>
+            </Grid>
+            <Label Content="Cheat# External Launcher - Alpha" HorizontalAlignment="Left" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="16" Margin="40,0,0,0" Height="32"/>
+            <Label Content="Account: TheRandomDevGuy" Foreground="WhiteSmoke" HorizontalAlignment="Right" VerticalContentAlignment="Center" VerticalAlignment="Center" FontSize="10" Margin="0,0,80,0" Width="400" HorizontalContentAlignment="Right" Height="32"/>
+        </Grid>
+
+        <!--Main Content Container-->
+        <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="0,32,0,0">
+
+            <!--Main Content Container-->
+            <Grid x:Name="MainContent" HorizontalAlignment="Stretch" Margin="40,0,0,0" Background="#FF1E1E1E" MouseDown="MainContent_MouseDown">
+                <ContentControl x:Name="MainContentHolder"/>
+            </Grid>
+
+            <!--Sidebar-->
+            <Grid x:Name="SidebarHolder" Background="#FF3F3F46" Width="40" HorizontalAlignment="Left"  VerticalAlignment="Stretch" ClipToBounds="True">
+                <Grid x:Name="Home" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF007ACC" MouseEnter="Grid_MouseEnter" MouseLeave="Grid_MouseLeave" ToolTip="Dashboard" MouseDown="Grid_MouseDown" Width="160">
+                    <iconPacks:PackIconMaterial x:Name="HomeIcon" Kind="Home" VerticalAlignment="Center" HorizontalAlignment="Left" Height="20" Width="20" Margin="10" />
+                    <Label Content="Dashboard" HorizontalAlignment="Left" Margin="40,0,0,0" VerticalAlignment="Center" Height="40" VerticalContentAlignment="Center"/>
+                </Grid>
+                <Grid x:Name="News" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,40,0,0" MouseEnter="Grid_MouseEnter" MouseLeave="Grid_MouseLeave" ToolTip="News" MouseDown="Grid_MouseDown" Width="160">
+                    <iconPacks:PackIconMaterial x:Name="NewsIcon" Kind="Newspaper" VerticalAlignment="Center" HorizontalAlignment="Left" Height="20" Width="20" Margin="10" />
+                    <Label Content="News" HorizontalAlignment="Left" Margin="40,0,0,0" VerticalAlignment="Center" Height="40" VerticalContentAlignment="Center"/>
+                </Grid>
+                <Grid x:Name="Plugins" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,80,0,0" MouseEnter="Grid_MouseEnter" MouseLeave="Grid_MouseLeave" ToolTip="Plugins" MouseDown="Grid_MouseDown" Width="160">
+                    <iconPacks:PackIconMaterial x:Name="PluginIcon" Kind="PowerPlug" VerticalAlignment="Center" HorizontalAlignment="Left" Height="20" Width="20" Margin="10" />
+                    <Label Content="Scripts and plugins" HorizontalAlignment="Left" Margin="40,0,0,0" VerticalAlignment="Center" Height="40" VerticalContentAlignment="Center"/>
+                </Grid>
+                <Grid x:Name="Account" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,120,0,0" MouseEnter="Grid_MouseEnter" MouseLeave="Grid_MouseLeave" ToolTip="Account" MouseDown="Grid_MouseDown" Width="160">
+                    <iconPacks:PackIconMaterial x:Name="AccountIcon" Kind="Account" VerticalAlignment="Center" HorizontalAlignment="Left" Height="20" Width="20" Margin="10" />
+                    <Label Content="My account" HorizontalAlignment="Left" Margin="40,0,0,0" VerticalAlignment="Center" Height="40" VerticalContentAlignment="Center"/>
+                </Grid>
+                <Grid x:Name="About" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,160,0,0" MouseEnter="Grid_MouseEnter" MouseLeave="Grid_MouseLeave" ToolTip="About" MouseDown="Grid_MouseDown" Width="160">
+                    <iconPacks:PackIconMaterial x:Name="InfoIcon" Kind="Information" VerticalAlignment="Center" HorizontalAlignment="Left" Height="20" Width="20" Margin="10" />
+                    <Label Content="Info" HorizontalAlignment="Left" Margin="40,0,0,0" VerticalAlignment="Center" Height="40" VerticalContentAlignment="Center"/>
+                </Grid>
+                <Grid x:Name="Settings" Height="40" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,200,0,0" MouseEnter="Grid_MouseEnter" MouseLeave="Grid_MouseLeave" ToolTip="Settings" MouseDown="Grid_MouseDown" Width="160">
+                    <iconPacks:PackIconMaterial x:Name="SettingsIcon" Kind="Settings" VerticalAlignment="Center" HorizontalAlignment="Left" Height="20" Width="20" Margin="10" />
+                    <Label Content="Settings" HorizontalAlignment="Left" Margin="40,0,0,0" VerticalAlignment="Center" Height="40" VerticalContentAlignment="Center"/>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</mah:MetroWindow>
