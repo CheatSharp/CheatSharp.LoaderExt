@@ -8,6 +8,7 @@ namespace CheatSharp.LoaderExt.Launcher
 {
     public class UpdateEngine
     {
+        //Todo: Put old code back
         public static bool IsServerRunning()
         {
             return false;
