@@ -18,11 +18,16 @@ namespace CheatSharp.LoaderExt.Pages
     /// <summary>
     /// Interaction logic for About.xaml
     /// </summary>
-    public partial class About : Page
+    public partial class About : Page, ICheatSharpPage
     {
         public About()
         {
             InitializeComponent();
+        }
+
+        public void Load()
+        {
+
         }
     }
 }

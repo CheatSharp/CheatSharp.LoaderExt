@@ -19,7 +19,7 @@ namespace CheatSharp.LoaderExt.Pages
     /// <summary>
     /// Interaction logic for Dashboard.xaml
     /// </summary>
-    public partial class Dashboard : Page
+    public partial class Dashboard : Page, ICheatSharpPage
     {
         public Dashboard()
         {
@@ -41,6 +41,10 @@ namespace CheatSharp.LoaderExt.Pages
                 ServerStatusLabel.Content = "Server status - down";
             }
 
+            //TODO: Update this to be proper checks against client and tested server versions
+            TestedStatusColor.Fill = Brushes.Green;
+            TestedStatusLabel.Content = "Tested working - Patch " + UpdateEngine.LatestTestVersion();
+
             switch (UpdateEngine.IsDetected())
             {
                 case Status.Okay:
@@ -55,10 +59,24 @@ namespace CheatSharp.LoaderExt.Pages
                     DetectionStatusColor.Fill = Brushes.Red;
                     DetectionStatusLabel.Content = "Detected & disabled";
                     break;
+                case Status.Down:
+                    DetectionStatusColor.Fill = Brushes.Gray;
+                    DetectionStatusLabel.Content = "Server down - unable to get detections status";
+                    break;
             }
 
             var days = UserAccount.DaysLeft();
-            if (days >= 7)
+            if (days == -1)
+            {
+                LicenseStatusColor.Fill = Brushes.Green;
+                LicenseStatusLabel.Content = $"License active - ∞ days until next payment";
+            }
+            else if (days == 0)
+            {
+                LicenseStatusColor.Fill = Brushes.Red;
+                LicenseStatusLabel.Content = $"License not active";
+            }
+            else if (days >= 7)
             {
                 LicenseStatusColor.Fill = Brushes.Green;
                 LicenseStatusLabel.Content = $"License active - {days} days until next payment";
@@ -67,16 +85,6 @@ namespace CheatSharp.LoaderExt.Pages
             {
                 LicenseStatusColor.Fill = Brushes.Yellow;
                 LicenseStatusLabel.Content = $"License active - {days} days until next payment";
-            }
-            else if (days == 0)
-            {
-                LicenseStatusColor.Fill = Brushes.Red;
-                LicenseStatusLabel.Content = $"License not active";
-            }
-            else if (days == -1)
-            {
-                LicenseStatusColor.Fill = Brushes.Green;
-                LicenseStatusLabel.Content = $"License active - ∞ days until next payment";
             }
 
             //Check for updates
@@ -95,6 +103,10 @@ namespace CheatSharp.LoaderExt.Pages
                     CheatSharpUpdateStatusColor.Fill = Brushes.Red;
                     CheatSharpUpdateStatusLabel.Content = "Cheat# version is out of date and detected";
                     break;
+                case Status.Down:
+                    CheatSharpUpdateStatusColor.Fill = Brushes.Gray;
+                    CheatSharpUpdateStatusLabel.Content = "Cheat# server is down";
+                    break;
             }
 
             switch (UpdateEngine.IsLauncherUpToDate())
@@ -104,11 +116,11 @@ namespace CheatSharp.LoaderExt.Pages
                     CheatSharpLauncherUpdateStatusLabel.Content = "Cheat# launcher up to date";
                     break;
                 case Status.Warn:
-                    CheatSharpLauncherUpdateStatusColor.Fill = Brushes.Green;
+                    CheatSharpLauncherUpdateStatusColor.Fill = Brushes.Red;
                     CheatSharpLauncherUpdateStatusLabel.Content = "Cheat# launcher out of date";
                     break;
                 case Status.Error:
-                    CheatSharpLauncherUpdateStatusColor.Fill = Brushes.Green;
+                    CheatSharpLauncherUpdateStatusColor.Fill = Brushes.Yellow;
                     CheatSharpLauncherUpdateStatusLabel.Content = "Cheat# launcher must be updated to run cheats";
                     break;
             }

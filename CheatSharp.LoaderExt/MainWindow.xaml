@@ -55,6 +55,9 @@
                     <Label Content="Settings" HorizontalAlignment="Left" Margin="40,0,0,0" VerticalAlignment="Center" Height="40" VerticalContentAlignment="Center"/>
                 </Grid>
             </Grid>
+            <Grid x:Name="OverlayGrid" Background="#7F7C7C7C" Visibility="Hidden">
+                <ContentControl x:Name="Overlay" VerticalAlignment="Center" HorizontalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+            </Grid>
         </Grid>
     </Grid>
 </mah:MetroWindow>

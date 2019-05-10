@@ -1,4 +1,5 @@
 ﻿using CheatSharp.LoaderExt.Pages;
+using CheatSharp.LoaderExt.Pages.Overlays;
 using MahApps.Metro.Controls;
 using System;
 using System.Collections.Generic;
@@ -32,6 +33,8 @@ namespace CheatSharp.LoaderExt
         private static readonly Plugins pluginsPage = new Plugins();
         private static readonly Settings settingsPage = new Settings();
 
+        private static readonly ReportBan reportBanOverlay = new ReportBan();
+
         public static readonly Brush selectColor = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF007ACC"));
         public static readonly Brush hoverColor = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF1C97EA"));
         public static readonly Brush noneColor = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF3F3F46"));
@@ -42,11 +45,42 @@ namespace CheatSharp.LoaderExt
         {
             InitializeComponent();
             ChangePage(dashboardPage);
+            dashboardPage.BanReportButton.Click += BanReportButton_Click;
+            reportBanOverlay.SubmitReport.Click += SubmitReport_Click;
+            reportBanOverlay.HideOverlay.Click += HideOverlay_Click;
+        }
+
+        private void HideOverlay_Click(object sender, RoutedEventArgs e)
+        {
+            OverlayGrid.Visibility = Visibility.Hidden;
+        }
+
+        private void SubmitReport_Click(object sender, RoutedEventArgs e)
+        {
+            OverlayGrid.Visibility = Visibility.Hidden;
+        }
+
+        private void BanReportButton_Click(object sender, RoutedEventArgs e)
+        {
+            ChangeOverlay(reportBanOverlay);
+        }
+
+        public void ChangeOverlay(Page page)
+        {
+            OverlayGrid.Visibility = Visibility.Visible;
+            Overlay.Height = page.MinHeight;
+            Overlay.Width = page.MinWidth;
+            Overlay.Content = page.Content;
         }
 
         private void ChangePage(Page page)
         {
             MainContentHolder.Content = page.Content;
+
+            if (page is ICheatSharpPage pg)
+            {
+                pg.Load();
+            }
         }
 
         bool extended = false;

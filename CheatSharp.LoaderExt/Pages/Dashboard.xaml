@@ -26,9 +26,9 @@
             </Grid>
             <Grid Height="40" VerticalAlignment="Top" Width="310" HorizontalAlignment="Left" Margin="0,80,0,0">
                 <Grid Width="26" Height="26" HorizontalAlignment="Left" VerticalAlignment="Center" >
-                    <Ellipse Fill="Green" HorizontalAlignment="Center" Height="15" Stroke="Black" VerticalAlignment="Center" Width="15"/>
+                    <Ellipse x:Name="TestedStatusColor" Fill="Green" HorizontalAlignment="Center" Height="15" Stroke="Black" VerticalAlignment="Center" Width="15"/>
                 </Grid>
-                <Label Content="Tested working - Patch 9.8" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="26,7,0,7"/>
+                <Label x:Name="TestedStatusLabel" Content="Tested working - Patch 9.8" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="26,7,0,7"/>
             </Grid>
             <Grid Height="40" VerticalAlignment="Top" Width="310" HorizontalAlignment="Left" Margin="310,0,0,0">
                 <Grid Width="26" Height="26" HorizontalAlignment="Left" VerticalAlignment="Center" >
@@ -88,9 +88,9 @@
                 <Button Content="Launch IcyWind" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="452" Margin="10,113,0,0"/>
                 <Button Content="Install Cheat# Update" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="452" Margin="10,145,0,0"/>
                 <Button Content="Install Cheat# External Launcher Update" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="452" Margin="10,177,0,0"/>
-                <Button Content="Install Any Plugin Updates" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="452" Margin="10,209,0,0"/>
-                <Button Content="Report a bug" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="452" Margin="10,285,0,0"/>
-                <Button Content="Report a ban" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="452" Margin="10,317,0,0"/>
+                <Button x:Name="UpdatePluginButton" Content="Install Any Plugin Updates" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="452" Margin="10,209,0,0"/>
+                <Button x:Name="BugReportButton" Content="Report a bug" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="452" Margin="10,285,0,0"/>
+                <Button x:Name="BanReportButton" Content="Report a ban" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="452" Margin="10,317,0,0"/>
             </Grid>
         </Grid>
     </Grid>
