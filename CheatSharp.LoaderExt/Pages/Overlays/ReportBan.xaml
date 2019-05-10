@@ -7,7 +7,7 @@
       xmlns:local="clr-namespace:CheatSharp.LoaderExt.Pages.Overlays"
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="600"
-      MinHeight="300" MinWidth="600"
+      MinHeight="350" MinWidth="600"
       Title="ReportBan">
 
     <Grid Background="#FF1E1E1E">
@@ -26,6 +26,9 @@
             VerticalAlignment="Top" FontSize="11" Margin="10,163,0,0" Height="22"/>
         <PasswordBox HorizontalAlignment="Stretch" Height="23" Margin="10,185,10,0" VerticalAlignment="Top" mah:TextBoxHelper.Watermark="Password"/>
         <Button x:Name="SubmitReport" Content="Submit Report" HorizontalAlignment="Stretch" Margin="10,0,10,10" VerticalAlignment="Bottom" Width="580" Height="43"/>
+        <ComboBox HorizontalAlignment="Left" Margin="10,238,0,0" VerticalAlignment="Top" Width="580"/>
+        <Label Content="Region" HorizontalAlignment="Left"
+            VerticalAlignment="Top" FontSize="11" Margin="10,216,0,0" Height="30"/>
 
     </Grid>
 </Page>
